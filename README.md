@@ -1,7 +1,8 @@
 Jeg har tænkt mig at bruge API-Appen
 
 Der benyttes jQuery, Javascript og HTML  til a kode
-Og MaterializeCSS til at gøre siden pæn at se på
+
+Der bruges MaterializeCSS til at gøre siden pæn at se på
 
 Indtil videre bruger jeg disse API'er:
 http://deckofcardsapi.com/ Som vælger en af de 52 kort fra et sæt spillekort
