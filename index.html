@@ -69,7 +69,6 @@
               <li id="menu-page-two"><a href="#">Random API</a></li>
               <li id="menu-page-three"><a href="#">Choose A Card</a></li>
               <li id="menu-page-four"><a href="#">IP Finder</a></li>
-              <li id="menu-page-five"><a href="#">What Yoda would've said (Virker ik)</a></li>
             </ul>
           </div>
         </nav>
@@ -144,26 +143,6 @@
       </div>
     </div>
 
-    <div id="page-five">
-      <div class="row">
-        <div class="col s12 m8">
-          <h4>Translate your text Yoda will</h4>
-          Write here what you translated want
-          <div class="input-field inline">
-            <input type="text" name="translate" size="70"><br>
-            <a class="waves-effect waves-light btn-large black" onclick="Translator('random?auth=null')">
-              <i class="material-icons right">swap_calls</i>Translate</a>
-          </div>
-          <div class="input-field inline">
-            <input type="text" name="translate" size="70"><br>
-
-          </div>
-          <div id="api-component-page-five">
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
   <!-- End Document body
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
 
@@ -254,20 +233,6 @@
   </div>
 </script>
 
-  <script id="api-card-template-five" type="text/x-handlebars-template">
-  <div class="row">
-    <div class="col s12 m7">
-      <div class="card">
-        <div class="card-image">
-          <span class="card-title"></span>
-        </div>
-        <div class="card-content">
-        </div>
-      </div>
-    </div>
-</div>
-</script>
-
   <!-- Page functionality - Javascripts
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <script>
@@ -284,9 +249,6 @@
 
     var apiSourceFour = $("#api-card-template-four").html();
     var apiTemplateFour = Handlebars.compile(apiSourceFour);
-
-    var apiSourceFive = $("#api-card-template-five").html();
-    var apiTemplateFive = Handlebars.compile(apiSourceFive);
 
     //Functions to actually get JSON data from external API's. When .done is called, you receive the data
     function getApiData(someparam) {
@@ -325,20 +287,11 @@
       });
     }
 
-    function Translator() {
-      $.ajax({
-        url: "https://api.funtranslations.com/translate/yoda.json",
-      }).done(function (data) {
-        console.log(data);
-        $('#api-component-page-five').html(apiTemplateFive(data));
-      });
-    }
     //Handle menu - first show page one no matter what
     getApiData(1)
     $('#page-two').hide();
     $('#page-three').hide();
     $('#page-four').hide();
-    $('#page-five').hide();
 
     //When someone clicks the page one navigation link
     //This is the second way to make something happen, when you click an HTML element
@@ -348,7 +301,6 @@
       $('#page-two').hide();
       $('#page-three').hide();
       $('#page-four').hide();
-      $('#page-five').hide();
     });
     //When someone clicks the page two navigation link
     $('#menu-page-two').click(function () {
@@ -357,7 +309,6 @@
       $('#page-two').show();
       $('#page-three').hide();
       $('#page-four').hide();
-      $('#page-five').hide();
     });
 
     $('#menu-page-three').click(function () {
@@ -366,7 +317,6 @@
       $('#page-two').hide();
       $('#page-three').show();
       $('#page-four').hide();
-      $('#page-five').hide();
     });
 
     $('#menu-page-four').click(function () {
@@ -375,16 +325,6 @@
       $('#page-two').hide();
       $('#page-three').hide();
       $('#page-four').show();
-      $('#page-five').hide();
-    });
-
-    $('#menu-page-five').click(function () {
-      Translator(1)
-      $('#page-one').hide();
-      $('#page-two').hide();
-      $('#page-three').hide();
-      $('#page-four').hide();
-      $('#page-five').show();
     });
   </script>
 
