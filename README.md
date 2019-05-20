@@ -15,9 +15,7 @@ Indtil videre bruger jeg disse API'er:
 http://deckofcardsapi.com/ Som vælger en af de 52 kort fra et sæt spillekort
 https://ipapi.co/ Som viser dig din IP, by du befinder dig i og mere.
 
-Her er et link til API-Appen: https://kvistgod.github.io/API-APP/
-
-
+______________________________________________________________________________________________________________________________
       
 This is a one-page template to make a neat web-app using an external API with jQuery. The app use the following frameworks and boilerplates:
 
